@@ -40,7 +40,7 @@ When your math is correct, monthlyRate will equal 1073.64
 let numerator = monthlyInterestRate *Math.pow((1 + monthlyInterestRate), periods);
 let denominator = Math.pow((1 + monthlyInterestRate), periods)-1;
 let monthlyRate = (principal * (numerator / denominator)).toFixed(2);
-console.log(monthlyRate);
+// console.log(monthlyRate);
 
 
 
@@ -50,17 +50,21 @@ console.log(monthlyRate);
 
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
-function calculator(){
-    let monthlyInterestRate = interestRate / 12;
-    let periods = years * 12;
-    let numerator = monthlyInterestRate *Math.pow((1 + monthlyInterestRate), periods);
-    let denominator = Math.pow((1 + monthlyInterestRate), periods)-1;
-    let monthlyRate = (principal * (numerator / denominator)).toFixed(2);
-    // console.log( `${name} Your monthly rate is ${monthlyRate}`);
-    return name + " your monthly rate is " + monthlyRate;
-};
-console.log(calculator());
 
+// ####COMPLETE####
+
+// function calculator(){
+//     let monthlyInterestRate = interestRate / 12;
+//     let periods = years * 12;
+//     let numerator = monthlyInterestRate *Math.pow((1 + monthlyInterestRate), periods);
+//     let denominator = Math.pow((1 + monthlyInterestRate), periods)-1;
+//     let monthlyRate = (principal * (numerator / denominator)).toFixed(2);
+//     // console.log( `${name} Your monthly rate is ${monthlyRate}`);
+//     return name + " your monthly rate is " + monthlyRate;
+// };
+// console.log(calculator());
+
+// ####COMPLETE####
 
 // 🏡 Task 4: Arguments and Parameters
 /* Substitute the variables in your functions for parameters such that you can substitute `P`, `I`, and `N` when you call the function.
@@ -69,18 +73,21 @@ For example,
 mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 */
 
+// ####COMPLETE####
 
 
-function mortgageCalculator(principal, interestRate, years){
-    let monthlyInterestRate = interestRate / 12;
-    let periods = years * 12;
-    let numerator = monthlyInterestRate *Math.pow((1 + monthlyInterestRate), periods);
-    let denominator = Math.pow((1 + monthlyInterestRate), periods)-1;
-    let monthlyRate = (principal * (numerator / denominator)).toFixed(2);
-    return name + " your monthly rate is " + monthlyRate;
+// function mortgageCalculator(principal, interestRate, years){
+//     let monthlyInterestRate = interestRate / 12;
+//     let periods = years * 12;
+//     let numerator = monthlyInterestRate *Math.pow((1 + monthlyInterestRate), periods);
+//     let denominator = Math.pow((1 + monthlyInterestRate), periods)-1;
+//     let monthlyRate = (principal * (numerator / denominator)).toFixed(2);
+//     return name + " your monthly rate is " + monthlyRate;
     
-};
-console.log(mortgageCalculator(300000, .05, 10));
+// };
+// console.log(mortgageCalculator(300000, .05, 10));
+
+// ####COMPLETE####
 
 
 // 🏡 Task 5: Conditionals
@@ -93,31 +100,31 @@ if credit score is below 660, interest rate increases by 0.5% and if credit scor
 // ####COMPLETE####
 
 
-function mortgageCalculator(principal, interestRate,  years, creditScore){
-    let monthlyInterestRate = interestRate / 12;
+// function mortgageCalculator(principal, interestRate,  years, creditScore){
+//     let monthlyInterestRate = interestRate / 12;
     
 
-    if (creditScore >= 740){
-        monthlyInterestRate = ((interestRate - .005 ) / 12);
+//     if (creditScore >= 740){
+//         monthlyInterestRate = ((interestRate - .005 ) / 12);
     
    
-    } 
+//     } 
     
-     else if (creditScore <= 640 ) {
-        monthlyInterestRate = (interestRate + .005 ) / 12;
+//      else if (creditScore <= 640 ) {
+//         monthlyInterestRate = (interestRate + .005 ) / 12;
         
-    }
-    else {
+//     }
+//     else {
         
-    }
-    let periods = years * 12;
-    let numerator = monthlyInterestRate *Math.pow((1 + monthlyInterestRate), periods);
-    let denominator = Math.pow((1 + monthlyInterestRate), periods)-1;
-    let monthlyRate = (principal * (numerator / denominator)).toFixed(2);
-    return name + " your monthly rate is " + monthlyRate;
-};
+//     }
+//     let periods = years * 12;
+//     let numerator = monthlyInterestRate *Math.pow((1 + monthlyInterestRate), periods);
+//     let denominator = Math.pow((1 + monthlyInterestRate), periods)-1;
+//     let monthlyRate = (principal * (numerator / denominator)).toFixed(2);
+//     return name + " your monthly rate is " + monthlyRate;
+// };
 
-console.log(mortgageCalculator(200000, 0.05, 30, 800)); 
+// console.log(mortgageCalculator(200000, 0.04, 30, 700)); 
 
 // ####COMPLETE####
 
@@ -141,18 +148,21 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
 
-// function variableInterestRate(principal, interestRate,  years){
-//     let monthlyInterestRate = interestRate / 12;
-//     let periods = years * 12;
-//     let numerator = monthlyInterestRate *Math.pow((1 + monthlyInterestRate), periods);
-//     let denominator = Math.pow((1 + monthlyInterestRate), periods)-1;
-//     let monthlyRate = (principal * (numerator / denominator)).toFixed(2);
-//     for (var interestRate = 0; interestRate < 10; interestRate ++ ) {
-//         console.log( `${name} your monthly rate is ${monthlyRate}`); 
-//     }
-//     // console.log( `${name} your monthly rate is ${monthlyRate}`);
-// };
-// variableInterestRate(200000, 0.04, 30);
+function variableInterestRate(principal, interestRate,  years){
+    interestRate = interestRate - .025;
+    for (let i = 0; i < 9; i++ ) {
+        interestRate = interestRate + .005;
+    let monthlyInterestRate = interestRate / 12;
+    let periods = years * 12;
+    let numerator = monthlyInterestRate *Math.pow((1 + monthlyInterestRate), periods);
+    let denominator = Math.pow((1 + monthlyInterestRate), periods)-1;
+    let monthlyRate = (principal * (numerator / denominator));
+
+    console.log( `${name} with an interest rate of ${(interestRate * 100).toFixed(2)}% your monthly payment will be ${Math.round(monthlyRate)}`);
+    }
+};
+
+variableInterestRate(200000, 0.04, 30);
 
 
 // 🌟🌟🌟 STRETCH 🌟🌟🌟//
